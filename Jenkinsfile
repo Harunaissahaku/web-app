@@ -24,7 +24,7 @@ pipeline {
            } 
            steps{
                script{
-                   withSonarQubeEnv('SonarQube'){
+                   withSonarQubeEnv('SonarScanner'){
                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=bronzy-webapp"
                    }
                }
