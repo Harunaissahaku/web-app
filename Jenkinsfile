@@ -20,11 +20,11 @@ pipeline {
 
     stage('code analysis'){
            environment {
-               scannerHome = tool 'sonar'
+               scannerHome = tool 'SonarQube'
            } 
            steps{
                script{
-                   withSonarQubeEnv('sonar'){
+                   withSonarQubeEnv('SonarQube'){
                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=bronzy-webapp"
                    }
                }
